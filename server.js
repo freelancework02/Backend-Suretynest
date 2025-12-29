@@ -9,7 +9,7 @@ const eventsRoutes = require('./Routes/eventsRoutes')
 const dashboardRoutes = require('./Routes/dashboardRoutes')
 const authRoutes = require("./Routes/authRoutes")
 const contactRoutes = require("./Routes/contactRoutes");
-
+ 
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,9 +21,9 @@ const allowed = new Set([
   'http://localhost:5500',
   'http://127.0.0.1:3000',
   'http://localhost:3000',
-  'https://admin.futureplanhelp.com',
-  'https://futureplanhelp.com',
-  'https://www.futureplanhelp.com',
+  'https://admin.suretynest.com',
+  'https://suretynest.com',
+  'https://www.suretynest.com',
   'http://localhost:5173'
 ]);
 
