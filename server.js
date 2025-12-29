@@ -21,21 +21,22 @@ const allowed = new Set([
   'http://localhost:5500',
   'http://127.0.0.1:3000',
   'http://localhost:3000',
-  'https://admin.suretynest.com',
+    'https://admin.suretynest.com',
+    'https://www.admin.suretynest.com',
   'https://suretynest.com',
   'https://www.suretynest.com',
   'http://localhost:5173'
 ]);
 
 app.use(cors({
-  origin: function (origin, callback) {
+  origin: function(origin, callback){
     // allow requests with no origin (curl, server-to-server)
     if (!origin) return callback(null, true);
     if (allowed.has(origin)) return callback(null, true);
     return callback(new Error('Not allowed by CORS'));
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization','Accept'],
   credentials: true
 }));
 
@@ -57,7 +58,7 @@ app.use('/api/dashboard', dashboardRoutes); // or app.use('/api', blogRoutes) if
 app.use('/api/auth', authRoutes); // or app.use('/api', blogRoutes) if routes define '/blogs' root
 app.use('/api/contact', contactRoutes); // or app.use('/api', blogRoutes) if routes define '/blogs' root
 
-
+ 
 // Health route
 app.get('/', (req, res) => res.json({ ok: true, version: '1.0' }));
 
